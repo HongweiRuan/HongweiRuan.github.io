@@ -1,0 +1,277 @@
+/* ==========================================================================
+   Custom homepage styles (news list, venue pills, paper cards)
+   ========================================================================== */
+
+$accent      : $info-color;
+$ink         : #1a1d23;
+$muted       : #6b7280;
+$hairline    : #e8eaee;
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+.page__content {
+  line-height: 1.65;
+  padding-bottom: 5em;
+
+  /* Section titles: no full-width rule, short accent bar instead */
+  h1 {
+    font-size: 1.3em;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: $ink;
+    margin-top: 2.2em;
+    margin-bottom: 1em;
+    padding-bottom: 0.45em;
+    border-bottom: none;
+    position: relative;
+    scroll-margin-top: 2.5em;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 28px;
+      height: 3px;
+      border-radius: 2px;
+      background: $accent;
+    }
+  }
+
+  a {
+    text-decoration: underline;
+    text-decoration-color: rgba($accent, 0.3);
+    text-underline-offset: 2px;
+    transition: color .15s, text-decoration-color .15s;
+
+    &:hover {
+      text-decoration-color: $accent;
+    }
+  }
+
+  strong { color: $ink; }
+}
+
+/* ---------- Venue pills ---------- */
+.venue {
+  display: inline-block;
+  padding: 0.12em 0.7em;
+  border-radius: 999px;
+  font-size: 0.74em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  white-space: nowrap;
+  vertical-align: 0.08em;
+  color: #475569;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+
+  &.corl  { color: #047857; background: #ecfdf5; border-color: #a7f3d0; }
+  &.arxiv { color: #b42318; background: #fef3f2; border-color: #fecdca; }
+  &.cvpr  { color: #1d4ed8; background: #eff6ff; border-color: #bfdbfe; }
+  &.iros, &.icra { color: #7c3aed; background: #f5f3ff; border-color: #ddd6fe; }
+}
+
+/* ---------- News ---------- */
+ul.news {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: grid;
+    grid-template-columns: 5.2em 1fr;
+    gap: 0.8em;
+    padding: 0.45em 0;
+    border-bottom: 1px dashed $hairline;
+    margin: 0;
+
+    &:last-child { border-bottom: none; }
+  }
+
+  .news-date {
+    color: $muted;
+    font-size: 0.86em;
+    font-variant-numeric: tabular-nums;
+    padding-top: 0.12em;
+  }
+
+  a { font-weight: 600; }
+}
+
+/* ---------- Paper cards ---------- */
+.paper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1.4em 0;
+  border-bottom: 1px solid $hairline;
+
+  &:last-of-type { border-bottom: none; }
+
+  @include breakpoint($medium) {
+    flex-direction: row;
+    gap: 1.6em;
+    align-items: flex-start;
+  }
+}
+
+.paper-thumb {
+  flex: 0 0 auto;
+
+  @include breakpoint($medium) { width: 36%; }
+
+  img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid $hairline;
+    background: #fff;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  &:hover img {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.10);
+  }
+}
+
+.paper-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.paper-title {
+  font-size: 1.06em;
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  margin-bottom: 0.35em;
+
+  a, .page__content & a {
+    color: $ink;
+    text-decoration: none;
+
+    &:hover { color: $accent; }
+  }
+}
+
+.paper-authors {
+  color: $muted;
+  font-size: 0.9em;
+  line-height: 1.55;
+  margin-bottom: 0.5em;
+
+  .me {
+    color: $ink;
+    font-weight: 600;
+  }
+}
+
+.paper-venue {
+  margin-bottom: 0.6em;
+
+  .venue-full {
+    margin-left: 0.55em;
+    color: $muted;
+    font-size: 0.85em;
+    font-style: italic;
+  }
+}
+
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin-bottom: 0.6em;
+
+  a, .page__content & a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    padding: 0.2em 0.75em;
+    border: 1px solid $hairline;
+    border-radius: 7px;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: $ink;
+    background: #fff;
+    text-decoration: none;
+    transition: border-color .15s, color .15s, background .15s;
+
+    i { font-size: 1.05em; color: $muted; transition: color .15s; }
+
+    &:hover {
+      border-color: rgba($accent, 0.45);
+      color: $accent;
+      background: rgba($accent, 0.04);
+
+      i { color: $accent; }
+    }
+  }
+}
+
+.paper-tldr {
+  color: #4b5563;
+  font-size: 0.9em;
+  margin: 0 !important;
+}
+
+.footnote-note {
+  color: $muted;
+  font-size: 0.82em;
+}
+
+/* ---------- Education ---------- */
+ul.edu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.9em;
+    padding: 0.6em 0;
+    margin: 0;
+  }
+
+  .edu-logo {
+    flex: 0 0 auto;
+    width: 2.6em;
+    height: 2.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $hairline;
+    border-radius: 10px;
+    background: #fff;
+
+    img {
+      width: 72%;
+      height: 72%;
+      object-fit: contain;
+    }
+  }
+
+  .edu-body {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.35;
+  }
+
+  .edu-school { font-weight: 600; color: $ink; }
+  .edu-degree { color: $muted; font-size: 0.9em; }
+  .edu-date {
+    flex: 0 0 auto;
+    color: $muted;
+    font-size: 0.86em;
+    font-variant-numeric: tabular-nums;
+  }
+}

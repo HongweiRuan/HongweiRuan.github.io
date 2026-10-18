@@ -8,51 +8,65 @@ redirect_from:
   - /about.html
 ---
 
-{% if site.google_scholar_stats_use_cdn %}
-{% assign gsDataBaseUrl = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: "@" %}
-{% else %}
-{% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
-{% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
-
 <span class='anchor' id='about-me'></span>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. Suspendisse condimentum, libero vel tempus mattis, risus risus vulputate libero, elementum fermentum mi neque vel nisl. Maecenas facilisis maximus dignissim. Curabitur mattis vulputate dui, tincidunt varius libero luctus eu. Mauris mauris nulla, scelerisque eget massa id, tincidunt congue felis. Sed convallis tempor ipsum rhoncus viverra. Pellentesque nulla orci, accumsan volutpat fringilla vitae, maximus sit amet tortor. Aliquam ultricies odio ut volutpat scelerisque. Donec nisl nisl, porttitor vitae pharetra quis, fringilla sed mi. Fusce pretium dolor ut aliquam consequat. Cras volutpat, tellus accumsan mattis molestie, nisl lacus tempus massa, nec malesuada tortor leo vel quam. Aliquam vel ex consectetur, vehicula leo nec, efficitur eros. Donec convallis non urna quis feugiat.
+Hi, I'm Hongwei, an M.S. student in Computer Science at [UC San Diego](https://ucsd.edu/), where I work in the Autonomous Vehicle Laboratory under the guidance of Prof. [Henrik I. Christensen](https://hichristensen.com/). I also work closely with the [VAIL](https://vail-ucla.github.io/) lab at UCLA, led by Prof. [Bolei Zhou](https://boleizhou.github.io/).
 
-My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
+My research focuses on **end-to-end autonomous driving**, with an emphasis on **closed-loop driving policies**. I am interested in how these policies behave once their own actions shape what they see next, and I use photorealistic neural simulation built from real-world driving logs to study and improve them in closed loop.
 
+# News
 
-# 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+<ul class="news">
+  <li><span class="news-date">2026.09</span><span><a href="https://navsafe-vail.github.io/">NavSafe-∞</a>, a closed-loop driving safety benchmark in photorealistic environments, released on <span class="venue arxiv">arXiv</span></span></li>
+  <li><span class="news-date">2026.09</span><span><a href="https://vail-ucla.github.io/BridgeSim/">BridgeSim</a>, a study of the open-loop to closed-loop gap in end-to-end driving, accepted to <span class="venue corl">CoRL 2026</span></span></li>
+</ul>
 
-# 📝 Publications 
+# Publications
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
-
-**Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
-
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+<div class="paper">
+  <a class="paper-thumb" href="https://navsafe-vail.github.io/"><img src="images/papers/navsafe.png" alt="NavSafe-∞ teaser"></a>
+  <div class="paper-body">
+    <div class="paper-title"><a href="https://navsafe-vail.github.io/">NavSafe-∞: Benchmarking Closed-Loop Driving Safety in Photorealistic Environments</a></div>
+    <div class="paper-authors">Yuxin Bao*, <span class="me">Hongwei Ruan*</span>, Luobin Wang, Seth Z. Zhao, Ziyang Leng, Zihan Zhang, Yu Zeng, Rowan McAllister, Henrik Christensen, Bolei Zhou</div>
+    <div class="paper-venue"><span class="venue arxiv">arXiv 2026</span><span class="venue-full">Preprint</span></div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2609.26618"><i class="ai ai-arxiv"></i>arXiv</a>
+      <a href="https://navsafe-vail.github.io/"><i class="fas fa-globe"></i>Project</a>
+      <a href="https://github.com/VAIL-UCLA/NavSafe-infty"><i class="fab fa-github"></i>Code</a>
+      <a href="https://huggingface.co/datasets/c13752hz/NavSafe"><i class="fas fa-database"></i>Dataset</a>
+    </div>
+    <p class="paper-tldr">A closed-loop benchmark that replays safety-critical real-world scenarios in reconstructed photorealistic environments and measures how driving policies react.</p>
+  </div>
 </div>
+
+<div class="paper">
+  <a class="paper-thumb" href="https://vail-ucla.github.io/BridgeSim/"><img src="images/papers/bridgesim.png" alt="BridgeSim teaser"></a>
+  <div class="paper-body">
+    <div class="paper-title"><a href="https://vail-ucla.github.io/BridgeSim/">BridgeSim: Unveiling the OL-CL Gap in End-to-End Autonomous Driving</a></div>
+    <div class="paper-authors">Seth Z. Zhao*, Luobin Wang*, <span class="me">Hongwei Ruan</span>, Yuxin Bao, Yilan Chen, Ziyang Leng, Abhijit Ravichandran, Honglin He, Zewei Zhou, Xu Han, Abhishek Peri, Zhiyu Huang, Pranav Desai, Henrik Christensen, Jiaqi Ma, Bolei Zhou</div>
+    <div class="paper-venue"><span class="venue corl">CoRL 2026</span><span class="venue-full">Conference on Robot Learning</span></div>
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2604.10856"><i class="ai ai-arxiv"></i>arXiv</a>
+      <a href="https://vail-ucla.github.io/BridgeSim/"><i class="fas fa-globe"></i>Project</a>
+      <a href="https://github.com/VAIL-UCLA/BridgeSim"><i class="fab fa-github"></i>Code</a>
+    </div>
+    <p class="paper-tldr">Shows why policies that score well in open-loop evaluation fail in closed-loop deployment (observational domain shift and objective mismatch), and proposes a practical remedy.</p>
+  </div>
 </div>
 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+<p class="footnote-note">* Equal contribution</p>
 
-# 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+# Education
 
-# 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-
-# 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
-
-# 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+<ul class="edu">
+  <li>
+    <span class="edu-logo"><img src="images/edu/ucsd.svg" alt="UC San Diego logo"></span>
+    <span class="edu-body"><span class="edu-school">University of California, San Diego</span><span class="edu-degree">M.S. in Computer Science</span></span>
+    <span class="edu-date">2025 – now</span>
+  </li>
+  <li>
+    <span class="edu-logo"><img src="images/edu/umich.svg" alt="University of Michigan logo"></span>
+    <span class="edu-body"><span class="edu-school">University of Michigan, Ann Arbor</span><span class="edu-degree">B.S. in Computer Science</span></span>
+    <span class="edu-date">2021 – 2025</span>
+  </li>
+</ul>
