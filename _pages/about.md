@@ -10,7 +10,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Hi, I'm Hongwei, an M.S. student in Computer Science at [UC San Diego](https://ucsd.edu/), where I work in the Autonomous Vehicle Laboratory under the guidance of Prof. [Henrik I. Christensen](https://hichristensen.com/). I also work closely with the [VAIL](https://vail-ucla.github.io/) lab at UCLA, led by Prof. [Bolei Zhou](https://boleizhou.github.io/).
+Hi, I'm Hongwei, an M.S. student in Computer Science at UC San Diego, where I work in the Autonomous Vehicle Laboratory under the guidance of Prof. [Henrik I. Christensen](https://hichristensen.com/). I also work closely with the [VAIL](https://vail-ucla.github.io/) lab at UCLA, led by Prof. [Bolei Zhou](https://boleizhou.github.io/).
 
 My research focuses on **end-to-end autonomous driving**, with an emphasis on **closed-loop driving policies**. I am interested in how these policies behave once their own actions shape what they see next, and I use photorealistic neural simulation built from real-world driving logs to study and improve them in closed loop.
 
